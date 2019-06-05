@@ -1,5 +1,15 @@
-function fetchBooks() {
 
+// this function should include a fetch request to the Game of Thrones API ('https://anapioficeandfire.com/api/books')
+//The returned response should be converted to JSON.  
+//Then, call the second function, renderBooks()
+// passing in the API's returned JSON data as the argument
+
+// write you solution so that fetchBooks() returns the fetch()
+function fetchBooks() {
+  return fetch('https://anapioficeandfire.com/api/books')
+  .then(resp => resp.json())
+  .then(json => renderBooks(json));
+  
 }
 
 function renderBooks(json) {
@@ -14,3 +24,7 @@ function renderBooks(json) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
+
+
+
